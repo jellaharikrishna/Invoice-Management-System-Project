@@ -17,7 +17,7 @@ const InvoiceFormPage = () => {
 
   useEffect(() => {
     if (id) {
-      console.log("Fetching invoice with ID:", id);
+      //console.log("Fetching invoice with ID:", id);
       const fetchInvoice = async () => {
         try {
           const token = localStorage.getItem("token");
@@ -26,9 +26,9 @@ const InvoiceFormPage = () => {
             setLoading(false);
             return;
           }
-
-          const response = await fetch(
-            `http://localhost:3000/api/invoices/${id}`,
+          
+          let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+          const response = await fetch(url,
             {
               method: "GET",
               headers: {
@@ -39,7 +39,7 @@ const InvoiceFormPage = () => {
           );
 
           const responseText = await response.text();
-          console.log("Response text:", responseText);
+          //console.log("Response text:", responseText);
 
           if (response.ok) {
             const invoice = JSON.parse(responseText);
@@ -80,7 +80,8 @@ const InvoiceFormPage = () => {
         setError("You are not authenticated. Please login.");
         return;
       }
-      const response = await fetch(`http://localhost:3000/api/invoices/${id}`, {
+      let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+      const response = await fetch(url, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -112,9 +113,9 @@ const InvoiceFormPage = () => {
           setError("You are not authenticated. Please login.");
           return;
         }
-
-        const response = await fetch(
-          `http://localhost:3000/api/invoices/${id}`,
+        
+        let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+        const response = await fetch(url,
           {
             method: "DELETE",
             headers: {

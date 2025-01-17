@@ -21,8 +21,9 @@ const HomePage = () => {
     }
 
     const fetchInvoices = async (token) => {
+      let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
       try {
-        const response = await fetch(`http://localhost:3000/api/invoices`, {
+        const response = await fetch(url, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -65,9 +66,9 @@ const HomePage = () => {
           setError("You are not authenticated. Please login.");
           return;
         }
-
-        const response = await fetch(
-          `http://localhost:3000/api/invoices/${id}`,
+        
+        let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+        const response = await fetch(url,
           {
             method: "DELETE",
             headers: {

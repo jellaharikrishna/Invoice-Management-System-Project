@@ -21,8 +21,10 @@ const App = () => {
   }, []);
 
   const fetchInvoices = async (token) => {
+
+    let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
     try {
-      const response = await fetch(`http://localhost:3000/api/invoices`, {
+      const response = await fetch(url, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`, 

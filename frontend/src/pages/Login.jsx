@@ -18,9 +18,9 @@ const Login = ({ onLogin }) => {
       setError("Please fill in all fields");
       return;
     }
-
+    let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/auth/login'
     try {
-      const response = await fetch(`http://localhost:3000/api/auth/login`, {
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

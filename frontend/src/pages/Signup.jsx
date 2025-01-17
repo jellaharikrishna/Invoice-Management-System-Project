@@ -14,9 +14,10 @@ const Signup = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
+    
+    let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/auth/register'
     try {
-      const response = await axios.post(`http://localhost:3000/api/auth/register`, {
+      const response = await axios.post(url, {
         username,
         email,
         password,
