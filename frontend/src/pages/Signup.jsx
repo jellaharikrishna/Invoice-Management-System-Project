@@ -15,8 +15,8 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     
-    //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/auth/register'
-    let url = 'http://localhost:3000/api/auth/register'
+    let url = 'https://invoice-management-system-project.onrender.com/api/auth/register'
+    
     try {
       const response = await axios.post(url, {
         username,
