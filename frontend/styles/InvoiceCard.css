@@ -1,0 +1,52 @@
+/* InvoiceCard.css */
+.invoice-card {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  
+  .invoice-card h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  .invoice-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .invoice-card p strong {
+    font-weight: 600;
+  }
+  
+  .invoice-card .status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+  }
+  
+  .invoice-card .status.paid {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .invoice-card .status.unpaid {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .invoice-card .status.pending {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .invoice-card {
+      max-width: 100%; /* Ensure card takes full width on smaller screens */
+    }
+  }
+  
