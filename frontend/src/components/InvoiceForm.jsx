@@ -26,7 +26,9 @@ const InvoiceForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
+    //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
+    let url = " http://localhost:3000/api/invoices"
+
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -41,7 +43,7 @@ const InvoiceForm = () => {
       }
 
       const newInvoice = await response.json();
-      console.log("New invoice added:", newInvoice);
+      //console.log("New invoice added:", newInvoice);
 
       
       navigate("/"); 

@@ -32,7 +32,8 @@ const AddInvoice = () => {
 
     const token = getToken();
 
-    let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
+    //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
+    let url = "http://localhost:3000/api/invoices"
 
     try {
       const response = await fetch(url, {
@@ -43,13 +44,14 @@ const AddInvoice = () => {
         },
         body: JSON.stringify(invoice),
       });
+      console.log(response);
 
       if (!response.ok) {
         throw new Error("Failed to add invoice");
       }
 
       const newInvoice = await response.json();
-      //console.log("New invoice added:", newInvoice);
+      console.log("New invoice added:", newInvoice);
 
       navigate("/home");
     } catch (err) {

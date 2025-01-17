@@ -21,7 +21,9 @@ const HomePage = () => {
     }
 
     const fetchInvoices = async (token) => {
-      let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
+      //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
+      let url = " http://localhost:3000/api/invoices"
+
       try {
         const response = await fetch(url, {
           headers: {
@@ -67,7 +69,8 @@ const HomePage = () => {
           return;
         }
         
-        let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+        //let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+        let url = `http://localhost:3000/api/invoices/${id}`
         const response = await fetch(url,
           {
             method: "DELETE",
@@ -100,18 +103,21 @@ const HomePage = () => {
     return <div>Loading invoices...</div>;
   }
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  // if (error) {
+  //   return <div>Error: {error}</div>;
+  // }
 
   return (
     <div className="home-container">
       <h2>Invoice Management System</h2>
-      <h2>Invoices</h2>
       <Filter onFilter={handleFilter} />
       <Link to="/add-invoice" className="add-button">
         Add Invoice
       </Link>
+      {filteredInvoices.length === 0 ? 
+      <div>
+        <h2>No Invoices found</h2>
+      </div> :
       <div className="invoice-list">
         {filteredInvoices.map((invoice) => (
           <div key={invoice._id} className="invoice-item">
@@ -128,6 +134,7 @@ const HomePage = () => {
           </div>
         ))}
       </div>
+}
     </div>
   );
 };

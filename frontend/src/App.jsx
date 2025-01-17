@@ -22,7 +22,9 @@ const App = () => {
 
   const fetchInvoices = async (token) => {
 
-    let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
+    //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
+    let url = "http://localhost:5173/api/invoices"
+    
     try {
       const response = await fetch(url, {
         headers: {

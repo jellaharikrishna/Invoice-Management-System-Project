@@ -27,7 +27,8 @@ const InvoiceFormPage = () => {
             return;
           }
           
-          let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+          //let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+          let url = `http://localhost:3000/api/invoices/${id}`
           const response = await fetch(url,
             {
               method: "GET",
@@ -80,7 +81,9 @@ const InvoiceFormPage = () => {
         setError("You are not authenticated. Please login.");
         return;
       }
-      let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+      //let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+      let url = `http://localhost:3000/api/invoices/${id}`
+
       const response = await fetch(url, {
         method: "PUT",
         headers: {
@@ -114,7 +117,8 @@ const InvoiceFormPage = () => {
           return;
         }
         
-        let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+        //let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
+        let url = `http://localhost:3000/api/invoices/${id}`
         const response = await fetch(url,
           {
             method: "DELETE",

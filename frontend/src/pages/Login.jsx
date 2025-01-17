@@ -18,7 +18,8 @@ const Login = ({ onLogin }) => {
       setError("Please fill in all fields");
       return;
     }
-    let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/auth/login'
+    //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/auth/login'
+    let url = 'http://localhost:3000/api/auth/login'
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -47,7 +48,7 @@ const Login = ({ onLogin }) => {
   return (
     <div className="login-container">
       <h2>Login</h2>
-      {error && <p className="error">{error}</p>}
+      
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -65,6 +66,7 @@ const Login = ({ onLogin }) => {
         />
         <button type="submit">Login</button>
       </form>
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };

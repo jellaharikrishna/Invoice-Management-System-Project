@@ -10,7 +10,7 @@ const InvoiceCard = ({ invoice, handleDelete }) => {
 
   return (
     <div className="invoice-card">
-      <h3>Invoice #{invoiceNumber}</h3>
+      <h3>Invoice No: {invoiceNumber}</h3>
       <p>
         <strong>Client:</strong> {clientName}
       </p>

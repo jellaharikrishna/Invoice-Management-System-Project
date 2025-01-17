@@ -1,4 +1,4 @@
-require('dotenv').config();
+const dotEnv = require('dotenv')
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -6,12 +6,17 @@ const invoiceRoutes = require("./routes/invoiceRoutes");
 const authRoutes = require('./routes/authRoutes'); 
 const authenticate = require("./middleware/auth"); 
 const app = express();
-app.use(cors({
-  origin: "https://hkjinvoicemanagementsystem.netlify.app/", 
+
+let url = "https://hkjinvoicemanagementsystem.netlify.app/"
+//let url = "http://localhost:5173"
+
+let corsOptions = {
+  origin: url, 
   methods: ["GET", "POST", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization"]
-}));
-
+}
+app.use(cors(corsOptions));
+dotEnv.config();
 
 app.get('/', (req, res) => {
   res.send('Hello, welcome to the Invoice Management System!');
@@ -27,9 +32,7 @@ mongoose
   .catch((error) => console.log("MongoDB connection error:", error));
 
 app.use("/api/auth", authRoutes);
-
 app.use("/api", authenticate, invoiceRoutes); 
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

@@ -15,7 +15,8 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     
-    let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/auth/register'
+    //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/auth/register'
+    let url = 'http://localhost:3000/api/auth/register'
     try {
       const response = await axios.post(url, {
         username,
@@ -31,7 +32,6 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <h2>Sign Up</h2>
-      {message && <p>{message}</p>}
       <form onSubmit={handleSignup}>
         <input
           type="text"
@@ -53,6 +53,7 @@ const Signup = () => {
         />
         <button type="submit">Sign Up</button>
       </form>
+      {message && <p>{message}</p>}
     </div>
   );
 };
