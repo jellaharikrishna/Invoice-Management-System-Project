@@ -7,7 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const authenticate = require("./middleware/auth"); 
 const app = express();
 app.use(cors({
-  origin: "http://localhost:5173", 
+  origin: "https://hkjinvoicemanagementsystem.netlify.app/", 
   methods: ["GET", "POST", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
