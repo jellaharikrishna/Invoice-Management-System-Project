@@ -26,8 +26,7 @@ const InvoiceForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
-    let url = " http://localhost:3000/api/invoices"
+    let url = 'https://invoice-management-system-project.onrender.com/api/invoices'
 
     try {
       const response = await fetch(url, {
