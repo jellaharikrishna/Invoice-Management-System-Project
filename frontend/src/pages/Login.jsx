@@ -18,8 +18,8 @@ const Login = ({ onLogin }) => {
       setError("Please fill in all fields");
       return;
     }
-    //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/auth/login'
-    let url = 'http://localhost:3000/api/auth/login'
+    let url = 'https://invoice-management-system-project.onrender.com/api/auth/login'
+    
     try {
       const response = await fetch(url, {
         method: "POST",
