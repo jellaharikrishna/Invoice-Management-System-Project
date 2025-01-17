@@ -21,8 +21,8 @@ const HomePage = () => {
     }
 
     const fetchInvoices = async (token) => {
-      //let url = 'https://hkjinvoicemanagementsystem.netlify.app/api/invoices'
-      let url = " http://localhost:3000/api/invoices"
+      let url = 'https://invoice-management-system-project.onrender.com/api/invoices'
+      
 
       try {
         const response = await fetch(url, {
@@ -69,8 +69,8 @@ const HomePage = () => {
           return;
         }
         
-        //let url = `https://hkjinvoicemanagementsystem.netlify.app/api/invoices/${id}`
-        let url = `http://localhost:3000/api/invoices/${id}`
+        let url = `https://invoice-management-system-project.onrender.com/api/invoices/${id}`
+        
         const response = await fetch(url,
           {
             method: "DELETE",
