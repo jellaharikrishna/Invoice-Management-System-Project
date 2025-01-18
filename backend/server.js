@@ -7,13 +7,23 @@ const authRoutes = require('./routes/authRoutes');
 const authenticate = require("./middleware/auth"); 
 const app = express();
 
-let url = "https://hkjinvoicemanagementsystem.netlify.app/"
-//let url = "http://localhost:5173"
+//let url = "https://hkjinvoicemanagementsystem.netlify.app/"
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://hkjinvoicemanagementsystem.netlify.app',
+];
 
 let corsOptions = {
-  origin: url, 
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }, 
   methods: ["GET", "POST", "DELETE", "PUT"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 }
 app.use(cors(corsOptions));
 dotEnv.config();
