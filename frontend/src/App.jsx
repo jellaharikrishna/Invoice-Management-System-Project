@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom"; 
-import HomePage from "./pages/HomePage"; 
+import Homepage from "./pages/Homepage"; 
 import InvoiceFormPage from "./pages/InvoiceFormPage";
 import Header from "./components/Header";
 import AddInvoice from "./components/AddInvoice";
@@ -63,7 +63,7 @@ const App = () => {
             path="/home"
             element={
               isAuthenticated ? (
-                <HomePage invoices={invoices} /> 
+                <Homepage invoices={invoices} /> 
               ) : (
                 <Navigate to="/login" /> 
               )
