@@ -28,6 +28,10 @@ const InvoiceFormPage = () => {
           }
           
           let url = `https://invoice-management-system-project.onrender.com/api/invoices/${id}`
+<<<<<<< HEAD
+=======
+          
+>>>>>>> 5a1cc9a8eb208fee5214715ccaceaeca7cae19f9
           const response = await fetch(url,
             {
               method: "GET",
@@ -81,6 +85,10 @@ const InvoiceFormPage = () => {
         return;
       }
       let url = `https://invoice-management-system-project.onrender.com/api/invoices/${id}`
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5a1cc9a8eb208fee5214715ccaceaeca7cae19f9
 
       const response = await fetch(url, {
         method: "PUT",
@@ -116,6 +124,10 @@ const InvoiceFormPage = () => {
         }
         
         let url = `https://invoice-management-system-project.onrender.com/api/invoices/${id}`
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 5a1cc9a8eb208fee5214715ccaceaeca7cae19f9
         const response = await fetch(url,
           {
             method: "DELETE",

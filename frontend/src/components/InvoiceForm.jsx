@@ -27,6 +27,11 @@ const InvoiceForm = () => {
     e.preventDefault();
     setLoading(true);
     let url = 'https://invoice-management-system-project.onrender.com/api/invoices'
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> 5a1cc9a8eb208fee5214715ccaceaeca7cae19f9
     try {
       const response = await fetch(url, {
         method: "POST",

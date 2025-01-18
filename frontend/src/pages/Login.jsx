@@ -19,6 +19,10 @@ const Login = ({ onLogin }) => {
       return;
     }
     let url = 'https://invoice-management-system-project.onrender.com/api/auth/login'
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 5a1cc9a8eb208fee5214715ccaceaeca7cae19f9
     try {
       const response = await fetch(url, {
         method: "POST",
