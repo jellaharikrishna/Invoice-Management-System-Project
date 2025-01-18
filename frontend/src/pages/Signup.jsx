@@ -14,12 +14,7 @@ const Signup = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    
     let url = 'https://invoice-management-system-project.onrender.com/api/auth/register'
-<<<<<<< HEAD
-=======
-    
->>>>>>> 5a1cc9a8eb208fee5214715ccaceaeca7cae19f9
     try {
       const response = await axios.post(url, {
         username,

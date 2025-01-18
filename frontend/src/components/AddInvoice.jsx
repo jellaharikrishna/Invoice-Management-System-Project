@@ -32,12 +32,7 @@ const AddInvoice = () => {
 
     const token = getToken();
 
-<<<<<<< HEAD
     let url = "https://invoice-management-system-project.onrender.com/api/invoices"
-=======
-    let url = 'https://invoice-management-system-project.onrender.com/api/invoices'
-    
->>>>>>> 5a1cc9a8eb208fee5214715ccaceaeca7cae19f9
 
     try {
       const response = await fetch(url, {
